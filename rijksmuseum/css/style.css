@@ -1,0 +1,154 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: none;
+}
+
+:root {
+    --accent-color: #d55140;
+    --button-tekst-bg-color: #fff;
+    --light-bg-color: #eee;
+    --metadata-tekst-color: #767676;
+  }
+
+body{
+    margin:0em 1em;
+    font-family: 'Inter', sans-serif;
+}
+
+header {
+    margin: 2em 0em 1em 0em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5em;
+    /* box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%); */
+    /* Bron https://codepen.io/meyne/pen/wvXrzRL */
+}
+
+p{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+li{
+    border: 0.1rem solid var(--accent-color);
+    border-radius: 5px;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    background-color: var(--light-bg-color);
+    box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
+    
+}
+
+section {
+    margin: 2rem 0;
+}
+
+section h1{
+    padding-bottom: .3rem;
+}
+
+header input {
+    /* margin: 50px auto; */
+    height: 36px;
+    padding: 8px;
+    border: 0.1rem solid var(--accent-color);
+    border-radius: 5px;
+    flex: 1 1 12em;
+    font-size: 1rem;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
+}
+
+header button {
+    background-color: var(--accent-color);
+    color: var(--button-tekst-bg-color);
+    border: none;
+    padding: 12px 24px;
+    flex: 1 1 4em;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
+}
+
+header > * {
+    height: 4em;
+}
+
+main section p{
+    color: var(--metadata-tekst-color);
+}
+
+main ul li img{
+    width: 100%;
+    height: 30%;
+    object-fit: cover;
+    padding-bottom: 1rem;
+}
+
+main ul li h2{
+    padding-left: .5rem;
+    padding-bottom: .5rem;
+}
+
+main ul li p{
+    padding-left: .5rem;
+    color: var(--metadata-tekst-color);
+}
+
+#artList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #artList li {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center;
+    margin: 10px;
+    padding: 10px; */
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  #artList li img {
+    max-width: 100%;
+  }
+  
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--button-tekst-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+
+  }
+  
+  #overlay h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-left: 1rem
+  } 
+  
+  #overlay p {
+    margin: 0;
+    font-size: 18px;
+    margin-bottom: .4em;
+    margin-left: 1rem;
+    color: var(--metadata-tekst-color)
+  }
+  
+  #overlay img {
+    max-width: 100%;
+    padding-bottom: 1rem;
+  }
