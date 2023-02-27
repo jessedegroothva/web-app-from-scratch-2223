@@ -168,7 +168,7 @@ main section img {
     margin: 0 auto;
   }
 
-  #overlay button {
+  #overlay a {
     position: absolute;
     top: 1em;
     left: 1em;
