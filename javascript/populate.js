@@ -105,12 +105,11 @@ export function populateArt(artObject) {
     <h2>${artObject.title}</h2>
     <p>${artObject.longTitle}</p>
     <p>${artObject.productionPlaces}</p>
-    <p>${artObject.longTitle}</p>
     <p>${artObject.objectNumber}</p>
     <p>${artObject.permitDownload}</p>
     <p>${artObject.webImage.height}</p>
     <p>${artObject.webImage.width}</p>
-    <a href="#">back home</a>
+    <a href="">back home</a>
   `;
 
   main.querySelector('p').addEventListener('click', () => {

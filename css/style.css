@@ -13,6 +13,9 @@
     --metadata-tekst-color: #767676;
   }
 
+
+
+/* Algemene stijling */
 body{
     margin:0em 1em;
     font-family: 'Inter', sans-serif;
@@ -43,19 +46,21 @@ li{
     overflow: hidden;
     background-color: var(--light-bg-color);
     box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
-    
 }
+/* Eind algemene stijling */
 
+
+
+/* Begin zoekbalk stijling */
 section {
     margin: 2rem 0;
 }
 
-section h1{
+/* section h1{
     padding-bottom: .3rem;
-}
+} */
 
 header input {
-    /* margin: 50px auto; */
     height: 36px;
     padding: 8px;
     border: 0.1rem solid var(--accent-color);
@@ -78,25 +83,64 @@ header button {
 header > * {
     height: 4em;
 }
+/* Eind zoekbalk stijling */
 
-main section p{
+
+
+/* main section p {
     color: var(--metadata-tekst-color);
-}
+} */
 
-main section ul {
+/* main section ul {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+} */
 
+
+
+/* Dit zorgt voor de skeleton animation als je de pagina laad */
+.skeleton {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 25em;
+  z-index: -50;
+  border-radius: 5px;
 }
 
-main ul li img{
-    width: 100%;
-    height: 30%;
-    object-fit: cover;
-    padding-bottom: 1rem;
+.skeleton {
+  opacity: .7;
+  animation: skeleton-loading 1s linear infinite alternate;
+  z-index: -50;
 }
+
+@keyframes skeleton-loading {
+0% {
+  background-color: hsl(200, 20%, 70%);
+}
+100% {
+  background-color: hsl(200, 20%, 95%);
+}
+}
+/* Einde skeleton animation */
+
+
+
+/* Stijlen van de Li */
+main ul li img {
+  width: 100%;
+  height: 30%;
+  object-fit: cover;
+  padding-bottom: 1rem;
+}
+
+/* main section img {
+  width: 90vw;
+  margin-bottom: .5em;
+} */
 
 main ul li h2{
     padding-left: .5rem;
@@ -108,75 +152,82 @@ main ul li p{
     color: var(--metadata-tekst-color);
 }
 
-main section img {
-  width: 90vw;
-  margin-bottom: .5em;
+main ul li a {
+  color: var(--accent-color);
+  font-weight: 600;
+  padding-left: .5rem;
 }
+/* Einde stijlen van de Li */
 
-#home {
+
+
+/* #home {
     list-style: none;
     padding: 0;
   }
   
-  #home li {
-    display: flex;
-    flex-direction: column;
-    /* align-items: center;
-    margin: 10px;
-    padding: 10px; */
-    background-color: #f2f2f2;
-    border-radius: 10px;
-    cursor: pointer;
-  }
+#home li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  cursor: pointer;
+}
   
-  #home li img {
-    max-width: 100%;
-  }
-  
-  #overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--button-tekst-bg-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
+#home li img {
+  max-width: 100%;
+} */
 
-  }
-  
-  #overlay h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    margin-left: 1rem
-  } 
-  
-  #overlay p {
-    margin: 0;
-    font-size: 1em;
-    margin-bottom: .4em;
-    margin-left: 1rem;
-    color: var(--metadata-tekst-color);
-  }
 
-  #overlay img {
-    max-width: 100%;
-    padding-bottom: 1rem;
-    height: 55vh;
-    width: fit-content;
-    margin: 0 auto;
-  }
 
-  #overlay a {
-    position: absolute;
-    top: 1em;
-    left: 1em;
-    background-color: var(--accent-color);
-    color: var(--button-tekst-bg-color);
-    border: none;
-    padding: 12px 24px;
-    flex: 1 1 4em;
-    border-radius: 5px;
-    box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
-  }
+/* Begin stijling van de details pagina */
+#details {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--button-tekst-bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+#details h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  margin-left: 1rem
+} 
+  
+#details p {
+  margin: 0;
+  font-size: 1em;
+  margin-bottom: .4em;
+  margin-left: 1rem;
+  color: var(--metadata-tekst-color);
+}
+
+#details img {
+  max-width: 100%;
+  padding-bottom: 1rem;
+  height: 55vh;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+#details a {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  background-color: var(--accent-color);
+  color: var(--button-tekst-bg-color);
+  border: none;
+  padding: 12px 24px;
+  flex: 1 1 4em;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 2%) inset, 0 40px 30px -20px rgb(0 0 0 / 8%), 20px 0 10px -20px rgb(0 0 0 / 3%);
+}
+/* Eind stijling van de details pagina */

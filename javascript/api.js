@@ -7,13 +7,35 @@ export function fetchData(id) {
   // kunstcollectie-api op te halen. Dit wordt gedaan door het verzenden van een verzoek naar 
   // de api, en het verwerken van de ontvangen gegevens in het JSON-formaat.
   
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        populateList(data.artObjects);
-        // handleRoute(data);
-        
-      })
+    // fetch(url)
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     populateList(data.artObjects);
+    //     handleRoute(data); comment dit uit
+    //   })
+
+  // Add this JavaScript code to fetch data and handle errors
+const skeletonWrapper = document.querySelector('.skeleton');
+
+fetch(url)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Oeps er is een probleem met het laden van de Rijksmuseum app. Probeer het nog een keer.');
+    }
+    return response.json();
+  })
+  .then(data => {
+    populateList(data.artObjects);
+    // handleRoute(data);
+    skeletonWrapper.style.display = 'none';
+  })
+  .catch(error => {
+    const errorMessage = document.createElement('h1');
+    errorMessage.textContent = 'Oeps er is een probleem met het laden van de Rijksmuseum app. Probeer het nog een keer.';
+    document.body.appendChild(errorMessage);
+    console.error('Error:', error);
+    skeletonWrapper.style.display = 'none';
+  });
 }
 
 export async function artData(id) {
