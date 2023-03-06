@@ -107,23 +107,18 @@ header > * {
   flex-direction: column;
   flex-wrap: wrap;
   height: 25em;
-  z-index: -50;
   border-radius: 5px;
-}
-
-.skeleton {
   opacity: .7;
   animation: skeleton-loading 1s linear infinite alternate;
-  z-index: -50;
 }
 
 @keyframes skeleton-loading {
-0% {
-  background-color: hsl(200, 20%, 70%);
-}
-100% {
-  background-color: hsl(200, 20%, 95%);
-}
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
 }
 /* Einde skeleton animation */
 
