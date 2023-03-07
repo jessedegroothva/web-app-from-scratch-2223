@@ -1,44 +1,22 @@
 import { fetchData, artData } from "./api.js";
 
+// handleRoute is een functie die de hash uit de url haalt
+// de hash is de pagina die je wilt zien
 handleRoute();
-// gebruik routie.js om de url af te vangen
-// haal data op die past bij de url
-// "/"
-// fetchData();
-// "/:id", b.v /nachtwacht
-// fetchData();
-
-// window.addEventListener('hashchange', () => {
-//     console.log('Deze hash is veranderd');
-//     fetchData(id)
-// }, false);
-
-// window.addEventListener('hashchange', () => {
-//     console.log('Deze hash is veranderd');
-//     fetchData(id)
-// }, false);
-
-// window.addEventListener('hashchange', handleRoute);
 
 export function handleRoute(data){
     routie({
         // startpagina
         '': () => {
             fetchData();
-            // if(data){
-            //     window.location.hash = 'home'
-            // }
         },
-        // '#home': () => {
-        //     fetchData();
-        //     if(data){
-        //         window.location.hash = 'home'
-        //     }
-        // },
         // haal data op van id uit fetchData
         // waarom heb je de id nodig? voor de laadtijd te verminderen?
         // een nieuwe pagina maken?
+
+        // hier wordt de id uit de url gehaald
         'details/:id': id => {
+            // hier wordt de functie artData aangeroepen met de id uit de url die opgehaald wordt uit api.js
             artData(id)
             console.log(id);
         }
@@ -46,6 +24,5 @@ export function handleRoute(data){
 };
 
 
-
-// zonder Jeffery, Joost en Robert zou het mijn niet lukken om routie
+// zonder Jeffery, Ymaro, Joost en Robert zou het mijn niet lukken om routie
 // te laten werken. 
