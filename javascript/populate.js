@@ -15,7 +15,7 @@ export function populateList(artObjects) {
     </ul>
   `;
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 10; i++) {
     const artObject = artObjects[i];
 
     console.log(artObject);
@@ -112,7 +112,4 @@ export function populateArt(artObject) {
     <a href="">back home</a>
   `;
 
-  main.querySelector('p').addEventListener('click', () => {
-    console.log('click');
-  })
 }
