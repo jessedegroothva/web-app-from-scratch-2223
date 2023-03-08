@@ -1,23 +1,5 @@
 import {populateList, populateArt} from './populate.js'
 
-
-// const searchInput = document.querySelector('[data-search]');
-// console.log(searchInput);
-// searchInput.addEventListener('input', (e) => {
-//   const value = e.target.value;
-//   console.log(e.target.value);
-
-//   fetchData(e.target.value)
-
-  // users.forEach(user => {
-  //   user.name.toLowerCase().includes(value.toLowerCase())})
-  //     console.log(user.name);
-// })
-
-
-// let users = []
-
-
 export function fetchData(query) {
   let url = 'https://www.rijksmuseum.nl/api/nl/collection?key=9ZKSEiYs&involvedMaker';
 
@@ -31,11 +13,11 @@ fetch(url)
   })
   // .then is een methode die de data van de api in een variabele stopt
   .then(data => {
-    // activateSearch(data); is
+    // activateSearch(data); is een functie die de zoekfunctie activeert
     activateSearch(data)
-    
+    //populateList(data.artObjects); is een functie die de data in de html zet
     populateList(data.artObjects);
-    // handleRoute(data);
+    // hier wordt de skeleton class uit de html gehaald
     skeletonWrapper.style.display = 'none';
   })
   // .catch is een methode die een error in de console logt als de data niet geladen kan worden
@@ -50,6 +32,7 @@ fetch(url)
   });
 }
 
+// activateSearch(data) zegt dat de functie activateSearch de data van de api gebruikt
 function activateSearch(data) {
   // hier selecteer ik de input in de html | searchData = data-search
   const searchInput = document.querySelector('[data-search]');

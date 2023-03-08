@@ -1,8 +1,6 @@
 // De populateList() functie wordt gebruikt om de opgehaalde gegevens op de 
 // webpagina te tonen. Deze functie maakt gebruik van een for-loop om de eerste 
-// vijf kunstwerken te selecteren en elk ervan in een li element te tonen. 
-// Er wordt een click eventlistener aan elk li element toegevoegd, zodat er 
-// meer informatie over het kunstwerk getoond kan worden wanneer erop wordt geklikt.
+// vijf kunstwerken te selecteren en elk ervan in een li element te tonen.
 
 export function populateList(artObjects) {
   // home.innerHTML = '';
@@ -26,6 +24,29 @@ export function populateList(artObjects) {
       <p>${artObject.principalOrFirstMaker}</p>
       <a href="#details/${artObject.objectNumber}">View details</a>
     `;
+
+    home.appendChild(li);
+  }
+}
+
+export function populateArt(artObject) {
+  console.log(artObject)
+  // console.log(home);
+  const main = document.querySelector('main');
+  main.id = "details";
+  main.innerHTML = `
+    <img src="${artObject.webImage.url.slice(0, -3) + "=s1000"}" alt="${artObject.title}">
+    <h2>${artObject.title}</h2>
+    <p>${artObject.longTitle}</p>
+    <p>${artObject.productionPlaces}</p>
+    <p>${artObject.objectNumber}</p>
+    <p>${artObject.permitDownload}</p>
+    <p>${artObject.webImage.height}</p>
+    <p>${artObject.webImage.width}</p>
+    <a href="">back home</a>
+  `;
+
+}
 
 // Wanneer er op een li element wordt geklikt, wordt er een div element aangemaakt dat 
 // informatie over het kunstwerk bevat. Deze informatie omvat een afbeelding van het 
@@ -91,25 +112,3 @@ export function populateList(artObjects) {
 //       });
 //     });
 
-    home.appendChild(li);
-  }
-}
-
-export function populateArt(artObject) {
-  console.log(artObject)
-  // console.log(home);
-  const main = document.querySelector('main');
-  main.id = "details";
-  main.innerHTML = `
-    <img src="${artObject.webImage.url.slice(0, -3) + "=s1000"}" alt="${artObject.title}">
-    <h2>${artObject.title}</h2>
-    <p>${artObject.longTitle}</p>
-    <p>${artObject.productionPlaces}</p>
-    <p>${artObject.objectNumber}</p>
-    <p>${artObject.permitDownload}</p>
-    <p>${artObject.webImage.height}</p>
-    <p>${artObject.webImage.width}</p>
-    <a href="">back home</a>
-  `;
-
-}
