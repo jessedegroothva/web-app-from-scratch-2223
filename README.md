@@ -1,7 +1,7 @@
 # :art:Rijksmuseum | Single Page Web App
 The web application is a Single page Application (SPA) that allows users to search for and view artwork from the Rijksmuseum which is based in Amsterdam.
 
-![Screenshot van Singe Page Web App](./img/activity-diagram.png)
+![activitydiagrambruh](https://user-images.githubusercontent.com/90199203/224014621-2ee2772e-a565-4e07-a1f4-1f176377d6ec.png)
 
 ## :card_file_box:Table of contents
 * [User story](#busts_in_silhouetteuser-story)
